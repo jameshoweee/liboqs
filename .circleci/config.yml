@@ -360,7 +360,7 @@ workflows:
           PYTEST_ARGS: --ignore=tests/test_namespace.py --ignore=tests/test_leaks.py --numprocesses=auto
       - linux_oqs:
           <<: *require_buildcheck
-          name: ubuntu-focal-clang14
+          name: ubuntu-focal-clang15
           context: openquantumsafe
           CONTAINER: openquantumsafe/ci-ubuntu-focal-x86_64:latest
           CMAKE_ARGS: -DCMAKE_C_COMPILER=clang-15 -DOQS_OPT_TARGET=skylake
