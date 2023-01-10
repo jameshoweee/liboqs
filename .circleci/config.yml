@@ -363,7 +363,14 @@ workflows:
           name: ubuntu-focal-clang14
           context: openquantumsafe
           CONTAINER: openquantumsafe/ci-ubuntu-focal-x86_64:latest
-          CMAKE_ARGS: -DCMAKE_C_COMPILER=clang-14 -DOQS_OPT_TARGET=skylake
+          CMAKE_ARGS: -DCMAKE_C_COMPILER=clang-15 -DOQS_OPT_TARGET=skylake
+      - linux_oqs:
+          <<: *require_buildcheck
+          name: ubuntu-jammy-openssl3
+          context: openquantumsafe
+          CONTAINER: openquantumsafe/ci-ubuntu-jammy:latest
+          # Activate the below if specific OpenSSL3 version should be tested:
+          # CMAKE_ARGS: -DOPENSSL_ROOT_DIR=/usr/local/openssl3
       - linux_oqs:
           <<: *require_buildcheck
           name: ubuntu-bionic-i386
