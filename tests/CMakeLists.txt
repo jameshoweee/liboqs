@@ -107,6 +107,10 @@ else ()
     target_link_libraries(test_sig_stfl PRIVATE ${API_TEST_DEPS})
 endif()
 
+# STFL Example
+add_executable(stfl-example stfl-example.c)
+target_link_libraries(stfl-example PRIVATE ${API_TEST_DEPS})
+
 add_executable(test_sig_stfl_mem test_sig_stfl_mem.c)
 target_link_libraries(test_sig_stfl_mem PRIVATE ${API_TEST_DEPS})
 
